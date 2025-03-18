@@ -28,7 +28,7 @@ app.add_middleware(
 
 
 # Load trained YOLO model
-model = YOLO("detect/train/weights/best.pt")  # Update with your model path
+model = YOLO("best.pt")  # Update with your model path
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
