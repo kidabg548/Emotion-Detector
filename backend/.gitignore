@@ -12,7 +12,8 @@ dist
 dist-ssr
 *.local
 myenv/
-.venv/
+detect/
+__pycache__/
 
 
 # Editor directories and files
