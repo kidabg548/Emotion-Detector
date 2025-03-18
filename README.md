@@ -1,54 +1,127 @@
-# React + TypeScript + Vite
+# AI-Powered Emotion Detection System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is an AI-powered Emotion Detection System consisting of a FastAPI backend and a React (Vite) frontend. The backend uses YOLO (You Only Look Once) for object detection and runs on FastAPI, while the frontend is a modern React app that allows users to upload images and receive real-time detection results. The system processes images, detects emotions, and returns labeled bounding boxes around detected faces. It is designed for speed, accuracy, and ease of use, making it suitable for emotion analysis and real-time applications. The backend is deployed on Render, while the frontend is hosted on Vercel.
 
-Currently, two official plugins are available:
+## Frontend Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This section guides you through setting up and running the React frontend for the Emotion Detection System.
 
-## Expanding the ESLint configuration
+1.  **Clone the repository**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    First, clone the frontend repository from GitHub:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+    ```sh
+    git clone https://github.com/kidabg548/Emotion-Detector.git
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2.  **Navigate to the project directory**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    Change your current directory to the `face-emotion-detection` folder:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+    ```sh
+    cd face-emotion-detection
+    ```
+
+3.  **Navigate to the frontend directory**
+
+    Change your current directory to the `face-emotion-detection` folder:
+
+    ```sh
+    cd frontend
+    ```
+
+4.  **Install the dependencies**
+
+    Install all required npm packages using:
+
+    ```sh
+    npm install
+    ```
+
+    This command reads the `package.json` file and installs all listed dependencies, including React, Vite, and other necessary libraries.
+
+4.  **Run the development server**
+
+    Start the React development server using:
+
+    ```sh
+    npm run dev
+    ```
+
+    This command starts the Vite development server, which typically runs on `http://localhost:5173`. The server provides hot-reloading, so changes in the code will be automatically reflected in the browser.
+
+5.  **Accessing the Application**
+
+    Once the development server is running, open your web browser and navigate to the address provided by the command line (usually `http://localhost:5173`). You should now see the Emotion Detection frontend.
+
+## Backend Guide: YOLO Object Detection API (FastAPI)
+
+This is a FastAPI-based backend for real-time object detection using the YOLO model.
+
+### Features
+
+*   Upload images and detect objects with bounding boxes.
+*   Uses **YOLO** for object detection.
+*   FastAPI for the backend.
+*   CORS support for frontend integration.
+
+### Requirements
+
+*   Python 3.8+
+*   FastAPI
+*   Uvicorn
+*   PyTorch
+*   OpenCV
+*   NumPy
+*   Ultralytics YOLO
+
+### Installation
+
+1.  **Clone the repository**
+
+    ```sh
+    git clone https://github.com/kidabg548/Emotion-Detector.git
+    ```
+
+2.  **Navigate to the project directory**
+
+    ```sh
+    cd face-emotion-detection
+    ```
+
+3.  **Navigate to the backend directory**
+
+    ```sh
+    cd backend
+    ```
+
+4.  **Create a virtual environment (recommended)**
+
+    ```sh
+    python -m venv .venv
+    ```
+
+5.  **Activate the virtual environment**
+
+    *   **Linux/macOS:**
+
+        ```sh
+        source .venv/bin/activate
+        ```
+
+    *   **Windows:**
+
+        ```sh
+        .venv\Scripts\activate
+        ```
+
+6.  **Install the dependencies**
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+### Running the API
+
+```sh
+uvicorn main:app --reload
