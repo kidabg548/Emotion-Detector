@@ -96,7 +96,7 @@ const EmotionDetector = () => {
 
       formData.append("file", file);
 
-      const result = await axios.post("http://127.0.0.1:8000/predict/", formData, {
+      const result = await axios.post("https://emotion-detector-1-bhg7.onrender.com/predict/", formData, {
         headers: {
             "Content-Type": "multipart/form-data",
         },
