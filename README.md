@@ -14,7 +14,7 @@ This section guides you through setting up and running the React frontend for th
     git clone https://github.com/kidabg548/Emotion-Detector.git
     ```
 
-2.  **Navigate to the frontend directory**
+2.  **Navigate to the project directory**
 
     Change your current directory to the `face-emotion-detection` folder:
 
@@ -22,7 +22,15 @@ This section guides you through setting up and running the React frontend for th
     cd face-emotion-detection
     ```
 
-3.  **Install the dependencies**
+3.  **Navigate to the frontend directory**
+
+    Change your current directory to the `face-emotion-detection` folder:
+
+    ```sh
+    cd frontend
+    ```
+
+4.  **Install the dependencies**
 
     Install all required npm packages using:
 
@@ -112,6 +120,7 @@ This is a FastAPI-based backend for real-time object detection using the YOLO mo
     ```sh
     pip install -r requirements.txt
     ```
+
 ### Running the API
 
 ```sh
