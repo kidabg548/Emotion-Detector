@@ -16,13 +16,21 @@ This section guides you through setting up and running the React frontend for th
 
 2.  **Navigate to the frontend directory**
 
+    Change your current directory to the main project directory:
+
+    ```sh
+    cd Emotion-Detector
+    ```
+
+3.  **Navigate to the frontend directory inside the project**
+
     Change your current directory to the `face-emotion-detection` folder:
 
     ```sh
     cd face-emotion-detection
     ```
 
-3.  **Install the dependencies**
+4.  **Install the dependencies**
 
     Install all required npm packages using:
 
@@ -32,7 +40,7 @@ This section guides you through setting up and running the React frontend for th
 
     This command reads the `package.json` file and installs all listed dependencies, including React, Vite, and other necessary libraries.
 
-4.  **Run the development server**
+5.  **Run the development server**
 
     Start the React development server using:
 
@@ -42,7 +50,7 @@ This section guides you through setting up and running the React frontend for th
 
     This command starts the Vite development server, which typically runs on `http://localhost:5173`. The server provides hot-reloading, so changes in the code will be automatically reflected in the browser.
 
-5.  **Accessing the Application**
+6.  **Accessing the Application**
 
     Once the development server is running, open your web browser and navigate to the address provided by the command line (usually `http://localhost:5173`). You should now see the Emotion Detection frontend.
 
@@ -72,17 +80,28 @@ This is a FastAPI-based backend for real-time object detection using the YOLO mo
 1.  **Clone the repository**
 
     ```sh
-    git clone https://github.com/your-username/your-backend-repo.git
-    cd your-backend-repo
+    git clone https://github.com/kidabg548/Emotion-Detector.git
     ```
 
-2.  **Create a virtual environment (recommended)**
+2.  **Navigate to the project directory**
+
+    ```sh
+    cd Emotion-Detector
+    ```
+
+3.  **Navigate to the backend directory**
+
+    ```sh
+    cd backend
+    ```
+
+4.  **Create a virtual environment (recommended)**
 
     ```sh
     python -m venv .venv
     ```
 
-3.  **Activate the virtual environment**
+5.  **Activate the virtual environment**
 
     *   **Linux/macOS:**
 
@@ -96,11 +115,15 @@ This is a FastAPI-based backend for real-time object detection using the YOLO mo
         .venv\Scripts\activate
         ```
 
-4.  **Install the dependencies**
+6.  **Install the dependencies**
 
     ```sh
     pip install -r requirements.txt
     ```
+
+### Configuration
+
+*   **YOLO Model Path:** The path to your YOLO model (`best.pt` or another model file). You can set this using the `MODEL_PATH` environment variable (see Deployment section) or by modifying the `MODEL_PATH` variable in `main.py`.
 
 ### Running the API
 
