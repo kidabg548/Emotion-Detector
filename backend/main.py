@@ -10,13 +10,16 @@ app = FastAPI()
 # Configure CORS
 origins = [
     "http://localhost",
-    "http://localhost:8000", # Add this line if your backend also serves content
+    "http://localhost:8000",  # Add this line if your backend also serves content
     "http://localhost:5173",  # Add your React frontend's origin
     "http://127.0.0.1",
     "http://127.0.0.1:8000",
-    "http://127.0.0.1:5173", # React can also sometimes run here
-    # "*", # ONLY FOR DEVELOPMENT - VERY INSECURE FOR PRODUCTION
+    "http://127.0.0.1:5173",  # React can also sometimes run here
+    "*",  # Allow all origins for development purposes (be cautious in production)
+    "https://emotion-detector-mu.vercel.app",  # Add the production frontend URL here
+
 ]
+
 
 app.add_middleware(
     CORSMiddleware,
